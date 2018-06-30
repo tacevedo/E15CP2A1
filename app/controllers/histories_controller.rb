@@ -8,6 +8,12 @@ class HistoriesController < ApplicationController
   def index
     @histories = History.all
   end
+  def myhistory
+    @histories = History.find_by(user_id: params[:user_id])
+    # if @histories == nil
+    #   return 'dasda'
+    # end
+  end
 
   # GET /histories/1
   # GET /histories/1.json

@@ -13,7 +13,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">Link1</a></li>
-        <li><a href="#">Link2</a></li>
+        <li>
+          <% if user_signed_in?%>
+            <%= link_to 'My histories', myhistory_path(current_user.id) %>
+          <% end %>
+          </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
